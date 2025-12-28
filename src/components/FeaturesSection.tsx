@@ -50,11 +50,11 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="glass-card p-6 hover:border-primary/30 transition-all duration-300 animate-fade-up"
+              className="glass-card p-6 hover:border-muted-foreground/30 transition-all duration-300 animate-fade-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <feature.icon className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 rounded-xl bg-secondary border-2 border-border flex items-center justify-center mb-4">
+                <feature.icon className="w-6 h-6 text-foreground" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 {feature.title}

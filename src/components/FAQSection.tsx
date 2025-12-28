@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "What payment methods do you accept?",
-    answer: "We accept all major payment methods including credit cards, debit cards, PayPal, and cryptocurrency for your convenience.",
+    answer: "We accept all major payment methods including credit cards, debit cards, and PayPal for your convenience.",
   },
   {
     question: "Is there a refund policy?",
@@ -55,7 +55,7 @@ const FAQSection = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="glass-card px-6 border-2 data-[state=open]:border-primary/30 transition-colors"
+                className="glass-card px-6 border-2 data-[state=open]:border-muted-foreground/30 transition-colors"
               >
                 <AccordionTrigger className="text-foreground hover:no-underline py-4 text-left">
                   {faq.question}
