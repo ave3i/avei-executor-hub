@@ -21,20 +21,20 @@ const HeroSection = () => {
           <div className="mb-8 animate-fade-up">
             <img 
               src={logo} 
-              alt="Avei" 
+              alt="Memoria" 
               className="h-20 w-auto mx-auto animate-float"
             />
           </div>
           
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background border-2 border-border mb-8 animate-fade-up animation-delay-100">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border-2 border-border mb-8 animate-fade-up animation-delay-100">
             <span className="w-2 h-2 rounded-full bg-foreground animate-pulse" />
             <span className="text-sm text-foreground font-medium">Now Available</span>
           </div>
           
           {/* Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight animate-fade-up animation-delay-200">
-            The Ultimate
+            Memoria
             <span className="block">Script Executor</span>
           </h1>
           
@@ -59,18 +59,18 @@ const HeroSection = () => {
           </div>
           
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t-2 border-border animate-fade-up animation-delay-400">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-16 pt-16 border-t-2 border-border animate-fade-up animation-delay-400">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-foreground">10K+</div>
-              <div className="text-sm text-muted-foreground mt-1">Active Users</div>
+              <div className="text-2xl md:text-4xl font-bold text-foreground">10K+</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">Active Users</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-foreground">99.9%</div>
-              <div className="text-sm text-muted-foreground mt-1">Uptime</div>
+              <div className="text-2xl md:text-4xl font-bold text-foreground">99.9%</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">Uptime</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-foreground">24/7</div>
-              <div className="text-sm text-muted-foreground mt-1">Support</div>
+              <div className="text-2xl md:text-4xl font-bold text-foreground">24/7</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">Support</div>
             </div>
           </div>
         </div>

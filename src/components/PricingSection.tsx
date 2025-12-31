@@ -45,8 +45,8 @@ const PricingSection = () => {
     try {
       const { data, error } = await supabase.functions.invoke("create-checkout", {
         body: {
-          priceId: "price_1SjNW7GY68qHNPyZXJ8CDNaC",
           customerEmail: user.email,
+          orderId: `MEMORIA-${user.id.slice(0, 8)}-${Date.now()}`,
         },
       });
 
@@ -67,9 +67,9 @@ const PricingSection = () => {
   };
 
   return (
-    <section id="pricing" className="py-24 bg-background">
+    <section id="pricing" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Simple Pricing
           </h2>
@@ -79,7 +79,7 @@ const PricingSection = () => {
         </div>
         
         <div className="max-w-md mx-auto">
-          <div className="glass-card p-8 relative overflow-hidden">
+          <div className="glass-card p-6 md:p-8 relative overflow-hidden">
             {/* Top border accent */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-foreground/20" />
             
@@ -88,7 +88,7 @@ const PricingSection = () => {
                 Lifetime Key
               </span>
               <div className="mt-4 flex items-baseline justify-center gap-2">
-                <span className="text-5xl font-bold text-foreground">$6.99</span>
+                <span className="text-4xl md:text-5xl font-bold text-foreground">$6.99</span>
                 <span className="text-muted-foreground">one-time</span>
               </div>
             </div>
@@ -115,7 +115,7 @@ const PricingSection = () => {
             </Button>
             
             <p className="text-center text-muted-foreground text-xs mt-4">
-              Secure payment via Stripe
+              Secure crypto payment via NOWPayments
             </p>
           </div>
         </div>

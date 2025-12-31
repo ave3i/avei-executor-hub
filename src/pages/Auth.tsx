@@ -114,14 +114,14 @@ const Auth = () => {
       <div className="w-full max-w-md">
         <div className="glass-card p-8">
           <div className="text-center mb-8">
-            <img src={logo} alt="Avei" className="h-12 w-auto mx-auto mb-6" />
+            <img src={logo} alt="Memoria" className="h-12 w-auto mx-auto mb-6" />
             <h1 className="text-2xl font-bold text-foreground">
               {isLogin ? "Welcome back" : "Create account"}
             </h1>
             <p className="text-muted-foreground text-sm mt-2">
               {isLogin
                 ? "Enter your credentials to continue"
-                : "Sign up to purchase Avei"}
+                : "Sign up to purchase Memoria"}
             </p>
           </div>
 

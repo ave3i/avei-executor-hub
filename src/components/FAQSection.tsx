@@ -7,32 +7,28 @@ import {
 
 const faqs = [
   {
-    question: "What is Avei?",
-    answer: "Avei is a powerful and reliable script executor designed for optimal performance and security. It allows you to run Lua scripts with full feature support.",
+    question: "What is Memoria?",
+    answer: "Memoria is a powerful script executor designed for optimal performance and reliability. It supports full Lua scripting and is regularly updated.",
   },
   {
-    question: "Is Avei safe to use?",
-    answer: "Yes, Avei is built with security as a top priority. Our advanced technology ensures undetectable operation while protecting your system and data.",
+    question: "How do I receive my license key?",
+    answer: "After purchase, your license key will be delivered to your email address within minutes. You can also access it from your account.",
   },
   {
-    question: "How do I get my key after purchase?",
-    answer: "After completing your purchase, you will receive your lifetime key instantly via email. You can also access it through your account dashboard.",
+    question: "Is Memoria safe to use?",
+    answer: "Yes, Memoria is designed with security in mind. We employ advanced detection-avoidance techniques to ensure safe operation.",
   },
   {
-    question: "Do I need to pay again for updates?",
-    answer: "No! Your one-time payment of $6.99 includes lifetime access to all future updates at no additional cost.",
+    question: "Do I get lifetime updates?",
+    answer: "Absolutely! Your one-time purchase includes all future updates at no additional cost.",
   },
   {
     question: "What payment methods do you accept?",
-    answer: "We accept all major payment methods including credit cards, debit cards, and PayPal for your convenience.",
+    answer: "We accept cryptocurrency payments through NOWPayments, including Bitcoin, Ethereum, and many other popular cryptocurrencies.",
   },
   {
-    question: "Is there a refund policy?",
-    answer: "Due to the digital nature of our product, all sales are final. However, if you experience technical issues, our support team is here to help.",
-  },
-  {
-    question: "How do I contact support?",
-    answer: "You can reach our support team through our Discord server where we provide fast and helpful assistance to all users.",
+    question: "How do I get support?",
+    answer: "Join our Discord community for 24/7 support from our team and community members.",
   },
 ];
 

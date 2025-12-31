@@ -9,14 +9,14 @@ const Terms = () => {
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-foreground mb-8">Terms of Service</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Terms of Service</h1>
             <p className="text-muted-foreground mb-8">Last updated: December 2024</p>
             
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               <section className="glass-card p-6">
                 <h2 className="text-xl font-semibold text-foreground mb-4">1. Acceptance of Terms</h2>
                 <p className="text-muted-foreground">
-                  By accessing and using Avei, you agree to be bound by these Terms of Service. 
+                  By accessing and using Memoria, you agree to be bound by these Terms of Service. 
                   If you do not agree to these terms, please do not use our services.
                 </p>
               </section>
@@ -25,7 +25,7 @@ const Terms = () => {
                 <h2 className="text-xl font-semibold text-foreground mb-4">2. License Grant</h2>
                 <p className="text-muted-foreground">
                   Upon purchase, you are granted a non-exclusive, non-transferable, lifetime license 
-                  to use Avei for personal use. This license cannot be shared, sold, or transferred 
+                  to use Memoria for personal use. This license cannot be shared, sold, or transferred 
                   to another party.
                 </p>
               </section>
@@ -54,7 +54,7 @@ const Terms = () => {
               <section className="glass-card p-6">
                 <h2 className="text-xl font-semibold text-foreground mb-4">5. Disclaimer of Warranties</h2>
                 <p className="text-muted-foreground">
-                  Avei is provided "as is" without any warranties, express or implied. We do not 
+                  Memoria is provided "as is" without any warranties, express or implied. We do not 
                   guarantee uninterrupted or error-free operation of the software.
                 </p>
               </section>
@@ -62,7 +62,7 @@ const Terms = () => {
               <section className="glass-card p-6">
                 <h2 className="text-xl font-semibold text-foreground mb-4">6. Limitation of Liability</h2>
                 <p className="text-muted-foreground">
-                  In no event shall Avei or its developers be liable for any indirect, incidental, 
+                  In no event shall Memoria or its developers be liable for any indirect, incidental, 
                   special, or consequential damages arising from the use or inability to use the software.
                 </p>
               </section>
@@ -78,7 +78,7 @@ const Terms = () => {
               <section className="glass-card p-6">
                 <h2 className="text-xl font-semibold text-foreground mb-4">8. Changes to Terms</h2>
                 <p className="text-muted-foreground">
-                  We reserve the right to modify these terms at any time. Continued use of Avei 
+                  We reserve the right to modify these terms at any time. Continued use of Memoria 
                   after changes constitutes acceptance of the new terms.
                 </p>
               </section>
