@@ -9,14 +9,14 @@ const Privacy = () => {
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-foreground mb-8">Privacy Policy</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Privacy Policy</h1>
             <p className="text-muted-foreground mb-8">Last updated: December 2024</p>
             
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               <section className="glass-card p-6">
                 <h2 className="text-xl font-semibold text-foreground mb-4">1. Introduction</h2>
                 <p className="text-muted-foreground">
-                  This Privacy Policy explains how Avei collects, uses, and protects your personal 
+                  This Privacy Policy explains how Memoria collects, uses, and protects your personal 
                   information. We are committed to ensuring your privacy is protected.
                 </p>
               </section>
