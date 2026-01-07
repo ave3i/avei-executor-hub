@@ -1,10 +1,5 @@
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { User } from "@supabase/supabase-js";
-import { useNavigate } from "react-router-dom";
-import { useToast } from "@/hooks/use-toast";
 
 const features = [
   "Lifetime access",
@@ -15,61 +10,18 @@ const features = [
   "Undetectable",
 ];
 
+// REPLACE THIS WITH YOUR LEMONSQUEEZY CHECKOUT LINK
+const LEMONSQUEEZY_CHECKOUT_URL = "https://your-store.lemonsqueezy.com/checkout/buy/YOUR_PRODUCT_ID";
+
 const PricingSection = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-  const { toast } = useToast();
-
-  useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setUser(session?.user ?? null);
-      }
-    );
-
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
-
-  const handlePurchase = async () => {
-    if (!user) {
-      navigate("/auth?redirect=pricing");
-      return;
-    }
-
-    setLoading(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: {
-          customerEmail: user.email,
-          orderId: `MEMORIA-${user.id.slice(0, 8)}-${Date.now()}`,
-        },
-      });
-
-      if (error) throw error;
-
-      if (data?.url) {
-        window.location.href = data.url;
-      }
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to start checkout",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
+  const handlePurchase = () => {
+    window.open(LEMONSQUEEZY_CHECKOUT_URL, "_blank");
   };
 
   return (
     <section id="pricing" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 animate-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Simple Pricing
           </h2>
@@ -78,10 +30,10 @@ const PricingSection = () => {
           </p>
         </div>
         
-        <div className="max-w-md mx-auto">
-          <div className="glass-card p-6 md:p-8 relative overflow-hidden">
+        <div className="max-w-md mx-auto animate-scale-in animation-delay-200">
+          <div className="glass-card p-6 md:p-8 relative overflow-hidden hover-glow transition-all duration-500">
             {/* Top border accent */}
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-foreground/20" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent" />
             
             <div className="text-center mb-8">
               <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
@@ -94,9 +46,13 @@ const PricingSection = () => {
             </div>
             
             <ul className="space-y-4 mb-8">
-              {features.map((feature) => (
-                <li key={feature} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-secondary border-2 border-border flex items-center justify-center flex-shrink-0">
+              {features.map((feature, index) => (
+                <li 
+                  key={feature} 
+                  className="flex items-center gap-3 animate-fade-up"
+                  style={{ animationDelay: `${(index + 3) * 100}ms` }}
+                >
+                  <div className="w-5 h-5 rounded-full bg-card border border-border flex items-center justify-center flex-shrink-0">
                     <Check className="w-3 h-3 text-foreground" />
                   </div>
                   <span className="text-foreground text-sm">{feature}</span>
@@ -107,15 +63,15 @@ const PricingSection = () => {
             <Button 
               variant="glow" 
               size="xl" 
-              className="w-full"
+              className="w-full hover-lift"
               onClick={handlePurchase}
-              disabled={loading}
             >
-              {loading ? "Loading..." : user ? "Purchase Now" : "Login to Purchase"}
+              Purchase Now
+              <ExternalLink className="w-4 h-4" />
             </Button>
             
             <p className="text-center text-muted-foreground text-xs mt-4">
-              Secure crypto payment via NOWPayments
+              Secure payment via LemonSqueezy • License key delivered instantly
             </p>
           </div>
         </div>

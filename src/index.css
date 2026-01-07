@@ -10,23 +10,23 @@
     --background: 0 0% 1.2%;
     --foreground: 0 0% 100%;
 
-    /* Cards - rgb(3,3,3) */
-    --card: 0 0% 1.2%;
+    /* Cards/buttons - rgb(4,4,4) = 1.6% */
+    --card: 0 0% 1.6%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 1.2%;
+    --popover: 0 0% 1.6%;
     --popover-foreground: 0 0% 100%;
 
     /* White accent for CTAs */
     --primary: 0 0% 100%;
     --primary-foreground: 0 0% 1.2%;
 
-    /* Subtle dark secondary */
-    --secondary: 0 0% 8%;
+    /* Subtle dark secondary - rgb(4,4,4) */
+    --secondary: 0 0% 1.6%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted - rgb(124,124,124) = 49% */
-    --muted: 0 0% 12%;
+    /* Muted */
+    --muted: 0 0% 8%;
     --muted-foreground: 0 0% 49%;
 
     --accent: 0 0% 100%;
@@ -35,37 +35,40 @@
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Border color rgb(30,30,30) = 11.8% */
-    --border: 0 0% 11.8%;
-    --input: 0 0% 11.8%;
+    /* Border color rgb(10,10,10) = 3.9% */
+    --border: 0 0% 3.9%;
+    --input: 0 0% 3.9%;
     --ring: 0 0% 100%;
 
     --radius: 1rem;
 
     /* Custom tokens */
     --surface: 0 0% 1.2%;
-    --surface-hover: 0 0% 8%;
+    --surface-hover: 0 0% 1.6%;
+    
+    /* Button specific - rgb(4,4,4) */
+    --button: 0 0% 1.6%;
   }
 
   .dark {
     --background: 0 0% 1.2%;
     --foreground: 0 0% 100%;
-    --card: 0 0% 1.2%;
+    --card: 0 0% 1.6%;
     --card-foreground: 0 0% 100%;
-    --popover: 0 0% 1.2%;
+    --popover: 0 0% 1.6%;
     --popover-foreground: 0 0% 100%;
     --primary: 0 0% 100%;
     --primary-foreground: 0 0% 1.2%;
-    --secondary: 0 0% 8%;
+    --secondary: 0 0% 1.6%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 12%;
+    --muted: 0 0% 8%;
     --muted-foreground: 0 0% 49%;
     --accent: 0 0% 100%;
     --accent-foreground: 0 0% 1.2%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 11.8%;
-    --input: 0 0% 11.8%;
+    --border: 0 0% 3.9%;
+    --input: 0 0% 3.9%;
     --ring: 0 0% 100%;
   }
 }
@@ -87,7 +90,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-background border-2 border-border rounded-2xl;
+    @apply bg-card border border-border rounded-2xl;
   }
 }
 
@@ -98,6 +101,18 @@
 
   .animate-fade-in {
     animation: fade-in 0.4s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
   }
 
   @keyframes fade-up {
@@ -120,6 +135,50 @@
     }
   }
 
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
   .animation-delay-100 {
     animation-delay: 100ms;
   }
@@ -131,5 +190,19 @@
   }
   .animation-delay-400 {
     animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)];
   }
 }

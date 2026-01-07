@@ -37,9 +37,9 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Why Choose Memoria?
+            Why Choose Glock?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Built from the ground up with performance and reliability in mind.
@@ -50,10 +50,10 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="glass-card p-6 hover:border-muted-foreground/30 transition-all duration-300 animate-fade-up"
+              className="glass-card p-6 hover:border-muted-foreground/30 transition-all duration-300 animate-fade-up hover-lift hover-glow group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-secondary border-2 border-border flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="w-6 h-6 text-foreground" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
